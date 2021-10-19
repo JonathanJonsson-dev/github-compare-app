@@ -8,11 +8,11 @@ export default class Controller {
         searchButton.addEventListener('click', () => {this.search()}) // När appen startar så lyssnar den efter click och kör this.search om man klickar
     }
 
-    search(){
+    async search(){
         console.log('user clicked search')
         // getUsername
         const username = 'JonathanJonsson-dev'
-        const githubUser = this.model.getGithubUser(username)
-        // this.view.showUser(githubUser)
+        const githubUser = await this.model.getGithubUser(username)
+        this.view.showUser(githubUser)
     }
 }
