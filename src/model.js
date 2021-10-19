@@ -10,7 +10,14 @@ export default class Model {
         const response = await fetch('https://api.github.com/users/JonathanJonsson-dev') //'${baseUrl}/users/${username}'
         const user = await response.json()
         console.log(response.headers.get('x-ratelimit-remaining'))
-        console.log(user)
         return user
     }
+
+    async getUserGithubRepos(username){
+        const response = await fetch('https://api.github.com/users/JonathanJonsson-dev/repos') //'${baseUrl}/users/${username}'
+        const user = await response.json()
+        console.log(response.headers.get('x-ratelimit-remaining'))
+        return user
+    }
+
 }
